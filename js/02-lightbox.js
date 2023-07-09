@@ -17,15 +17,4 @@ const galleryItemsHTML = galleryItems.map(item =>
     
 gallery.insertAdjacentHTML('afterbegin', galleryItemsHTML);
 
-gallery.addEventListener('click', clickOnImg);
-
-function clickOnImg(event) {
-    event.preventDefault();
-    
-    if (event.target.tagName !== 'IMG') {
-        return;
-    };
-
-    const lightbox = new SimpleLightbox('.gallery__link', { captionsData: 'alt', captionDelay: 250 })
-    lightbox();
-}
+new SimpleLightbox('.gallery__link', { captionsData: 'alt', captionDelay: 250 });
